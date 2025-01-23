@@ -6,8 +6,10 @@ import {
   useScroll,
   useMotionValueEvent,
 } from "framer-motion";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import Image from "next/image";
 
 export const FloatingNav = ({
   navItems,
@@ -22,96 +24,109 @@ export const FloatingNav = ({
 }) => {
   const { scrollYProgress } = useScroll();
   const [isScrolled, setIsScrolled] = useState(false);
-
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  console.log(isScrolled);
+  
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     if (typeof current === "number") {
-      if (scrollYProgress.get() > 0.05) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(scrollYProgress.get() > 0.05);
     }
   });
 
   return (
     <AnimatePresence mode="wait">
       <motion.div
-        initial={{
-          opacity: 1,
-          y: 0,
-        }}
-        animate={{
-          y: 0,
-          opacity: 1,
-        }}
-        transition={{
-          duration: 0.2,
-        }}
+        initial={{ opacity: 1, y: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.2 }}
         className={cn(
-          "fixed top-0 inset-x-0 w-full bg-black shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1)] z-[5000] px-4 sm:px-6 lg:px-8 py-4 ",
+          "fixed top-0 inset-x-0 w-full bg-transparent shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1)] z-[5000] px-4 ",
           className
         )}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <Link href="/" className="text-white text-xl font-bold">
-              LOGO
-            </Link>
-          </div>
+          <Link href="/" className="text-white text-xl font-bold">
+            <Image 
+            src="/logo.png"
+            alt="logo"
+            width={100}
+            height={10}
+            />
+          </Link>
 
-          {/* Navigation Items - Center */}
-          <div className="border border-1 border-[#FFFFFF]/15 px-12 py-3 rounded-full ">
-            <div className="hidden sm:flex items-center justify-center space-x-8">
-              {navItems.map((navItem: any, idx: number) => (
-                <Link
-                  key={`link=${idx}`}
-                  href={navItem.link}
-                  className="text-gray-300 hover:text-white text-sm"
-                >
-                  <span className="block sm:hidden">{navItem.icon}</span>
-                  <span className="hidden sm:block">{navItem.name}</span>
-                </Link>
-              ))}
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            <div className="border border-1 border-[#FFFFFF]/15 px-12 py-3 rounded-full">
+              <div className="flex items-center justify-center space-x-8">
+                {navItems.map((navItem, idx) => (
+                  <Link
+                    key={idx}
+                    href={navItem.link}
+                    className="text-gray-300 hover:text-white text-sm"
+                  >
+                    {navItem.name}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* CTA Buttons - Right */}
+          {/* CTA and Mobile Menu Toggle */}
           <div className="flex items-center space-x-4">
-            <button
-              className="relative group bg-[#8C45FF]/50 text-white px-4 py-2 rounded-full text-sm font-medium 
-      transition-all duration-300
-      hover:bg-[#8C45FF]/70
-      hover:shadow-[0_0_20px_2px_rgba(140,69,255,0.3)]
-      focus:outline-none focus:ring-2 focus:ring-[#8C45FF]/50"
+            <button 
+              className="hidden md:block relative group bg-[#8C45FF]/50 text-white px-4 py-2 rounded-full text-sm font-medium
+              transition-all duration-300 hover:bg-[#8C45FF]/70
+              hover:shadow-[0_0_20px_2px_rgba(140,69,255,0.3)]"
             >
-              <div className="relative">
-                Get Started
-                {/* Bottom gradient line with glow */}
-              </div>
+              Get Started
+            </button>
 
-              {/* Background glow effect */}
-              <div
-                className="absolute -inset-1 rounded-full bg-gradient-to-r from-[#9856FF]  
-        opacity-0 group-hover:opacity-30 blur-xl
-        transition-all duration-300 -z-10"
-              />
+            {/* Mobile Menu Toggle */}
+            <button 
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden text-white focus:outline-none"
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            >
+              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
-        <div className="sm:hidden flex justify-center mt-4 space-x-4">
-          {navItems.map((navItem: any, idx: number) => (
-            <Link
-              key={`mobile-link=${idx}`}
-              href={navItem.link}
-              className="text-gray-300 hover:text-white text-sm"
+        {/* Mobile Menu Overlay */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+              className="md:hidden absolute left-0 right-0 top-full bg-black mt-4"
             >
-              {navItem.icon || navItem.name}
-            </Link>
-          ))}
-        </div>
+              <div className="px-4 py-4 space-y-4">
+                {navItems.map((navItem, idx) => (
+                  <Link
+                    key={idx}
+                    href={navItem.link}
+                    className="block py-2 text-gray-300 hover:text-white hover:bg-[#2C2C2C] rounded-md"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <div className="flex items-center space-x-2">
+                      {navItem.icon && <span>{navItem.icon}</span>}
+                      <span>{navItem.name}</span>
+                    </div>
+                  </Link>
+                ))}
+                <button 
+                  className="w-full bg-[#8C45FF]/50 text-white px-4 py-2 rounded-full text-sm font-medium
+                  transition-all duration-300 hover:bg-[#8C45FF]/70 mt-2"
+                >
+                  Get Started
+                </button>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </motion.div>
     </AnimatePresence>
   );
