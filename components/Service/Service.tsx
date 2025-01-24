@@ -59,10 +59,10 @@ export default function Service() {
           SEO efforts.
         </h1>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 ">
           {features.map((feature, index) => (
             <div key={index} className="space-y-3">
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 hover:animate-in">
                 <feature.icon className="w-6 h-6" />
                 <h2 className="text-xl font-medium">
                   {feature.title}

@@ -56,7 +56,7 @@ export function About() {
 
         <WobbleCard containerClassName="col-span-1 min-h-[320px] bg-gradient-to-br from-neutral-900 to-neutral-800 rounded-3xl  flex flex-col justify-between relative overflow-hidden">
           <Image
-            src=""
+            src="/logo.png"
             alt="Holographic pyramid"
             width={180}
             height={180}
