@@ -6,9 +6,9 @@ import { WobbleCard } from "../ui/wobble-card";
 export function About() {
   return (
     <div>
-      <div className="flex justify-center items-center text-7xl text-white font-inter">
-        About Us
-      </div>
+      <h2 className="flex items-center justify-center text-4xl md:text-7xl font-medium mb-4 bg-gradient-to-b from-white to-white/80 bg-clip-text text-transparent font-inter">
+          About Us
+        </h2>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-7xl mx-auto w-full py-10 px-8 ">
         <WobbleCard containerClassName="col-span-1 min-h-[320px] rounded-3xl flex flex-col justify-between items-center relative overflow-hidden">
           <div className="flex flex-1 justify-center items-center w-full">

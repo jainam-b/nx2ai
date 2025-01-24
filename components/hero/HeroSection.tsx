@@ -105,7 +105,7 @@ export default function Dashboard() {
         </div>
 
         {/* Content */}
-        <div className="relative z-20">
+        <div className="relative z-20 font-inter">
           {/* Hero Section */}
           <div className="text-center pt-20 px-4">
             <motion.div
@@ -129,10 +129,10 @@ export default function Dashboard() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-6xl font-bold mb-6 max-w-3xl mx-auto leading-tight text-white"
+              className="text-[82px] font-bold mb-6  mx-auto leading-tight text-white font-inter"
             >
               Boost your <br />
-              <span className="bg-gradient-to-b from-[#FFFFFF] to-[#7800AB]/60 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-b from-[#FFFFFF] to-[#7800AB]/60 bg-clip-text text-transparent font-inter">
                 rankings with AI.
               </span>
             </motion.h1>
@@ -141,7 +141,7 @@ export default function Dashboard() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-purple-200 text-xl mb-8 max-w-2xl mx-auto"
+              className="text-purple-200 text-xl mb-8 max-w-2xl mx-auto font-inter"
             >
               Elevate your sites visibility effortlessly with AI, where smart
               technology meets user-friendly SEO tools.
@@ -154,7 +154,7 @@ export default function Dashboard() {
             >
               <Button
                 size="lg"
-                className="bg-[#D438FF] text-white hover:bg-[#8C45FF] transition-colors duration-300"
+                className="bg-[#D438FF] text-white hover:bg-[#8C45FF] transition-colors duration-300 font-inter"
               >
                 Start for free
               </Button>

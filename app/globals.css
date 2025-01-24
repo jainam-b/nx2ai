@@ -6,6 +6,12 @@ body {
   font-family: Inter, sans-serif;
   background-color: black;
 }
+@font-face {
+  font-family: 'inter';
+  src: url('/fonts/Inter-VariableFont.ttf') format('truetype');
+  font-weight: 300; 
+  font-style: italic;
+}
 
 @layer base {
   :root {
