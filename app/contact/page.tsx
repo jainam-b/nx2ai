@@ -1,10 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
-import About from "./About";
-import Section1 from "@/components/AboutPage/Section1";
-import Metrix from "@/components/AboutPage/Metrix";
-import GetReady from "@/components/AboutPage/GetReady";
 import Footer from "@/components/Footer/Footer";
+import ContactForm from "@/components/ContactPage/ContactForm";
+import { NavBar } from "@/components/Navbar/Navbar";
 
 export default function page() {
   return (
@@ -15,10 +13,8 @@ export default function page() {
       transition={{ duration: 1.3 }}
     >
       <div>
-        <About />
-        <Section1/>
-        <Metrix/>
-        <GetReady/>
+        <NavBar/>
+        <ContactForm/>
         <Footer/>
       </div>
     </motion.div>

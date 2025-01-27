@@ -40,11 +40,10 @@ export default function About() {
 
             {/* Buttons */}
             <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-              <button className="px-6 py-3 rounded-full bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-colors">
-                Get Free Version
-              </button>
-              <button className="px-6 py-3 rounded-full bg-purple-600 text-white hover:bg-purple-700 transition-colors">
-                Unlock Full Version
+              <button 
+               className="px-6 py-3 rounded-full bg-purple-600 text-white hover:bg-purple-700 transition-colors"
+               onClick={()=>window.location.href=("/contact")}>
+              Contact Us
               </button>
             </div>
           </div>
