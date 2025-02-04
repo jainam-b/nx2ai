@@ -3,52 +3,72 @@ import { LayoutDashboard, BarChart3, Sparkles, FileText, Target, Bell, Link2, Za
 export default function Service() {
   const features = [
     {
-      icon: LayoutDashboard,
-      title: "User-friendly dashboard",
-      description: "Perform complex SEO audits and optimizations with a single click.",
+      "title": "Text-to-Image Comic Generation",
+      "description": "Harnessing the power of AI to generate high-quality, visually stunning comics from textual descriptions.",
+      "icon": LayoutDashboard
     },
     {
-      icon: BarChart3,
-      title: "Visual reports",
-      description: "Visual insights into your site's performance.",
+      "title": "Character Generation",
+      "description": "AI-powered tools to create unique characters for games, animations, and storytelling.",
+      "icon": Users
     },
     {
-      icon: Sparkles,
-      title: "Smart Keyword Generator",
-      description: "Automatic suggestions and the best keywords to target.",
-      isNew: true,
+      "title": "Generative AI for Digital Art and Design",
+      "description": "Revolutionizing creativity with AI-powered tools to generate unique and high-quality digital art and designs.",
+      "icon": Sparkles
     },
     {
-      icon: FileText,
-      title: "Content evaluation",
-      description: "Simple corrections for immediate improvements.",
+      "title": "AI-Assisted Video Generation",
+      "description": "Creating videos from scripts or text descriptions, enhancing efficiency and creativity.",
+      "icon": FileText
     },
     {
-      icon: Target,
-      title: "SEO goal setting",
-      description: "Helps you set and achieve SEO goals with guided assistance.",
+      "title": "Text-to-Speech (TTS)",
+      "description": "Transform written text into lifelike audio with our advanced TTS solutions.",
+      "icon":Bell
     },
     {
-      icon: Bell,
-      title: "Automated alerts",
-      description: "Automatic notifications about your SEO health, including quick fixes.",
+      "title": "Speech-to-Text (STT)",
+      "description": "High-accuracy transcription of spoken language into text for documentation and analysis.",
+      "icon":Target
     },
     {
-      icon: Link2,
-      title: "Link Optimization Wizard",
-      description: "Guides you through the process of creating and managing links.",
+      "title": "Speech-to-Speech Translation",
+      "description": "Seamless translation of spoken language into another while retaining the speaker's voice and tone.",
+      "icon": Link2
     },
     {
-      icon: Zap,
-      title: "One-click optimization",
-      description: "Perform complex SEO audits and optimizations with a single click.",
+      "title": "Voice Cloning",
+      "description": "Replicate voices with precision to create authentic voiceovers and dubbing solutions.",
+      "icon": Zap
     },
     {
-      icon: Users,
-      title: "Competitor reports",
-      description: "Provides insights into competitors' keyword strategies and ranking.",
+      "title": "Voice Changer",
+      "description": "Real-time voice modulation technology to transform voices for gaming, content creation, and anonymity purposes.",
+      "icon": BarChart3
     },
+    {
+      "title": "Speech Translation",
+      "description": "Real-time and offline translation solutions for seamless communication across languages.",
+      "icon": Link2
+    },
+    {
+      "title": "Large Language Model (LLM) Chatbots",
+      "description": "Conversational AI chatbots powered by advanced LLMs for intuitive and human-like interactions.",
+      "icon": Users
+    },
+    {
+      "title": "LLM-Based Output Generation",
+      "description": "Advanced AI capabilities for generating content, summarizing information, and performing data analysis.",
+      "icon": FileText
+    },
+    // {
+    //   "title": "AI-Driven Content Moderation",
+    //   "description": "Advanced tools to detect and moderate harmful or inappropriate content in real-time.",
+    //   "icon": Target
+    // }
   ]
+
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#190D2E] to-[#000000] text-white py-20 px-4 md:px-6 lg:px-8 rounded-3xl">
@@ -66,11 +86,6 @@ export default function Service() {
                 <feature.icon className="w-6 h-6" />
                 <h2 className="text-xl font-medium">
                   {feature.title}
-                  {feature.isNew && (
-                    <span className="ml-2 inline-flex items-center rounded-full bg-purple-600 px-2 py-0.5 text-xs font-medium text-white">
-                      NEW
-                    </span>
-                  )}
                 </h2>
               </div>
               <p className="text-gray-400 text-lg leading-relaxed">{feature.description}</p>
@@ -81,4 +96,3 @@ export default function Service() {
     </div>
   )
 }
-

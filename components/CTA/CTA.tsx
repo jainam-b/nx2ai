@@ -20,7 +20,7 @@ export default function CTA() {
         <div className="absolute inset-0 bg-gradient-to-b  from-purple-900/50 to-black" />
 
         {/* Grid overlay */}
-        <div
+        <motion.div
           className="absolute inset-0 border-dashed"
           style={{
             backgroundImage: `
@@ -28,7 +28,16 @@ export default function CTA() {
               linear-gradient(to bottom, rgba(139, 92, 246, 0.1) 1px, transparent 1px)
             `,
             backgroundSize: "72px 72px",
-            strokeDasharray: "5"
+            strokeDasharray: "10",
+          }}
+          animate={{
+            x: [0, -10, 0, 10, 0],
+            y: [0, 10, 0, -10, 0],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "linear",
           }}
         />
 
@@ -40,9 +49,9 @@ export default function CTA() {
           className="relative z-10 flex flex-col items-center justify-center px-4 py-20"
         >
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-medium text-center mb-12 text-white">
-            AI-driven SEO
+          Next Generation Of 
             <br />
-            for everyone.
+            AI For Everyone.
           </h1>
 
           <form onSubmit={handleSubmit} className="w-full max-w-md space-y-4">

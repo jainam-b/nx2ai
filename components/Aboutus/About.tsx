@@ -2,73 +2,139 @@
 import Image from "next/image";
 import React from "react";
 import { WobbleCard } from "../ui/wobble-card";
+import { motion } from "framer-motion";
 
 export function About() {
   return (
-    <div>
-      <h2 className="flex items-center justify-center text-4xl md:text-7xl font-medium mb-4 bg-gradient-to-b from-white to-white/80 bg-clip-text text-transparent font-inter">
-          About Us
-        </h2>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-7xl mx-auto w-full py-10 px-8 ">
-        <WobbleCard containerClassName="col-span-1 min-h-[320px] rounded-3xl flex flex-col justify-between items-center relative overflow-hidden">
-          <div className="flex flex-1 justify-center items-center w-full">
-            <Image
-              src="/holo_torus.png"
-              alt="Holographic torus"
-              width={180}
-              height={180}
-              className=""
-            />
-          </div>
-          <div>
-            <h2 className="text-2xl font-semibold tracking-tight text-white">
-              SEO goal setting
-            </h2>
-            <p className="mt-2 text-base text-neutral-300">
-              Helps you set and achieve SEO goals with guided assistance.
-            </p>
+    <div className="bg-black py-24 px-6 md:px-8 lg:px-16">
+      <motion.h2
+        className="text-center text-4xl md:text-6xl lg:text-7xl font-medium mb-16 bg-gradient-to-b from-white to-white/80 bg-clip-text text-transparent font-inter"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        About Us
+      </motion.h2>
+
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto w-full">
+        {/* Card 1: AI-Powered Solutions */}
+        <WobbleCard containerClassName="col-span-1 group">
+          <div className="relative h-[480px] overflow-hidden">
+            {/* Image Container */}
+            <div className="absolute inset-0">
+              <Image
+                src="/heroSection/a01.jpeg" 
+                alt="AI Brain"
+                width={500}
+                height={500}
+                className="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-700"
+              />
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/90" />
+            </div>
+            
+            {/* Content */}
+            <div className="relative h-full p-6 flex flex-col justify-end">
+              <div className="transform group-hover:-translate-y-2 transition-transform duration-500">
+                <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white text-left mb-4 ">
+                  AI-Powered Solutions
+                </h2>
+                <p className="text-base text-neutral-300/90 leading-relaxed">
+                  We are a team of passionate AI researchers and engineers dedicated to breaking down language barriers through innovative technology. Our mission is to make global communication seamless and natural.
+                </p>
+              </div>
+            </div>
           </div>
         </WobbleCard>
 
-        <WobbleCard containerClassName="col-span-1 lg:col-span-2 min-h-[320px] bg-gradient-to-b from-black  to-purple-950/70 rounded-3xl  flex flex-col justify-between relative overflow-hidden">
-          <div className="max-w-sm mt-auto">
-            <h2 className="text-2xl font-semibold tracking-tight text-white">
-              User-friendly dashboard
-            </h2>
-            <p className="mt-2 text-base text-neutral-300">
-              Perform complex SEO audits and optimizations with a single click.
-            </p>
+        {/* Card 2: Real-time Translation */}
+        <WobbleCard containerClassName="col-span-1 lg:col-span-2 group">
+          <div className="relative h-[480px] overflow-hidden">
+            {/* Image Container */}
+            <div className="absolute inset-0">
+              <Image
+                src="/heroSection/a02.png"
+                alt="Real-time Translation"
+                width={1000}
+                height={600}
+                className="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-700"
+              />
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/90" />
+            </div>
+            
+            {/* Content */}
+            <div className="relative h-full p-6 flex flex-col justify-end">
+              <div className="transform group-hover:-translate-y-2 transition-transform duration-500">
+                <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white mb-4 ">
+                  Real-time Translation
+                </h2>
+                <p className="text-base text-neutral-300/90 leading-relaxed max-w-xl">
+                  Instant translation across multiple languages with natural voice output, enabling seamless communication across borders.
+                </p>
+              </div>
+            </div>
           </div>
         </WobbleCard>
-        
 
-        <WobbleCard containerClassName="col-span-1 lg:col-span-2 min-h-[320px] bg-gradient-to-b from-purple-950 to-neutral-900 rounded-3xl  flex flex-col justify-between relative overflow-hidden">
-          <div className="max-w-sm">
-            <h2 className="text-2xl font-semibold tracking-tight text-white">
-              Advanced Analytics
-            </h2>
-            <p className="mt-2 text-base text-neutral-300">
-              Get detailed insights and performance metrics for your SEO
-              campaigns.
-            </p>
+        {/* Card 3: Natural Voice */}
+        <WobbleCard containerClassName="col-span-1 lg:col-span-2 group">
+          <div className="relative h-[480px] overflow-hidden">
+            {/* Image Container */}
+            <div className="absolute inset-0">
+              <Image
+                src="/heroSection/a3.png"
+                alt="Natural Voice"
+                width={800}
+                height={400}
+                className="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-700"
+              />
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/90" />
+            </div>
+            
+            {/* Content */}
+            <div className="relative h-full p-6 flex flex-col justify-end">
+              <div className="transform group-hover:-translate-y-2 transition-transform duration-500">
+                <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white mb-4 ">
+                  Natural Voice
+                </h2>
+                <p className="text-base text-neutral-300/90 leading-relaxed max-w-xl">
+                  Human-like speech synthesis with emotional intelligence, creating more engaging and natural conversations.
+                </p>
+              </div>
+            </div>
           </div>
         </WobbleCard>
 
-        <WobbleCard containerClassName="col-span-1 min-h-[320px] bg-gradient-to-br from-neutral-900 to-neutral-800 rounded-3xl  flex flex-col justify-between relative overflow-hidden">
-          <Image
-            src="/logo.png"
-            alt="Holographic pyramid"
-            width={180}
-            height={180}
-            className="mb-auto"
-          />
-          <div>
-            <h2 className="text-2xl font-semibold tracking-tight text-white">
-              Smart Keyword Generator
-            </h2>
-            <p className="mt-2 text-base text-neutral-300">
-              Automatic suggestions and the best keywords to target.
-            </p>
+        {/* Card 4: Multi-lingual */}
+        <WobbleCard containerClassName="col-span-1 group">
+          <div className="relative h-[480px] overflow-hidden">
+            {/* Image Container */}
+            <div className="absolute inset-0">
+              <Image
+                src="/heroSection/a02.png"
+                alt="Multi-lingual Support"
+                width={500}
+                height={500}
+                className="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-700"
+              />
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/90" />
+            </div>
+            
+            {/* Content */}
+            <div className="relative h-full p-6 flex flex-col justify-end">
+              <div className="transform group-hover:-translate-y-2 transition-transform duration-500">
+                <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white text-left mb-4 ">
+                  Multi-lingual
+                </h2>
+                <p className="text-base text-neutral-300/90 leading-relaxed">
+                  Support for over 50 languages with regional accents, ensuring authentic and culturally appropriate communication.
+                </p>
+              </div>
+            </div>
           </div>
         </WobbleCard>
       </div>

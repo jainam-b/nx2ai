@@ -50,8 +50,8 @@ export const FloatingNav = ({
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <div className="flex">
-            <Link href="/" className="text-white text-xl font-bold">
-            <Image src="/logo.png" alt="logo" width={120} height={10} />
+            <Link href="/" className="text-white mt-2 text-xl font-bold">
+            <Image src="/logoNew.png" alt="logo" width={120} height={10} />
           </Link>
             </div>
 

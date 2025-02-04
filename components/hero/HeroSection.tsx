@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ContainerScroll } from "../ui/container-scroll-animation";
 import Image from "next/image";
@@ -107,8 +106,8 @@ export default function Dashboard() {
         {/* Content */}
         <div className="relative z-20 font-inter">
           {/* Hero Section */}
-          <div className="text-center pt-20 px-4">
-            <motion.div
+          <div className="text-center pt-32 px-4">
+            {/* <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -123,30 +122,29 @@ export default function Dashboard() {
         <span className="text-[#D438FF] text-sm sm:text-base">
           Latest integration just arrived
         </span>
-            </motion.div>
+            </motion.div> */}
 
             <motion.h1
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        className="text-[50px] sm:text-4xl md:text-5xl lg:text-[82px] font-bold mb-4 sm:mb-6 mx-auto leading-tight text-white font-inter"
-      >
-        Boost your <br />
-        <span className="bg-gradient-to-b from-[#FFFFFF] to-[#7800AB]/40 bg-clip-text text-transparent font-inter">
-          rankings with AI.
-        </span>
-      </motion.h1>
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-[50px] sm:text-4xl md:text-5xl lg:text-[90px] font-bold mb-4 sm:mb-6 mx-auto leading-tight bg-gradient-to-b from-white to-white/80 bg-clip-text text-transparent font-inter"
+            >
+              Dive Into <br />
+              <span className="bg-gradient-to-b from-[#FFFFFF] to-[#7800AB]/40 bg-clip-text text-transparent font-inter">
+                The World Of AI.
+              </span>
+            </motion.h1>
 
-
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        className="text-purple-200 text-base md:text-xl mb-6 sm:mb-8 max-w-xl sm:max-w-2xl mx-auto font-inter px-4"
-      >
-        Elevate your sites visibility effortlessly with AI, where smart
-        technology meets user-friendly SEO tools.
-      </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-purple-200 text-base md:text-xl mb-6 sm:mb-8 max-w-xl sm:max-w-2xl mx-auto font-inter px-4"
+            >
+              Elevate your brands future effortlessly with custom AI tools.
+              Where Smart Technology connects with user-friendly AI tools.
+            </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -155,10 +153,11 @@ export default function Dashboard() {
             >
               <Button
                 size="lg"
-                className="bg-[#D438FF] text-white hover:bg-[#8C45FF] transition-colors duration-300 font-inter"
+                className="bg-[#D438FF] text-white hover:bg-[#8C45FF] transition-colors duration-300  font-inter text-lg"
               >
-                Start for free
+                Login/Signup
               </Button>
+              
             </motion.div>
           </div>
 
@@ -195,3 +194,16 @@ export const useCircularMotion = (radius: number, speed = 5000) => {
 
   return position;
 };
+
+
+{/* <video
+autoPlay
+loop
+muted
+playsInline
+src="/heroSection/hero.mp4"
+height={720}
+width={1400}
+className="mx-auto rounded-2xl object-cover h-full object-left-top"
+draggable={false}
+/> */}

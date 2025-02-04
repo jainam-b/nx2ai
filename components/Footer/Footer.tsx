@@ -3,10 +3,23 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Twitter, Instagram, Youtube } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-gray-400 mt-10 px-4 py-8">
+    <footer className=" relative bg-black text-gray-400 mt-10 px-4 py-8 overflow-hidden">
+      <motion.div 
+  className="absolute left-1/4 top-1/3 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-gradient-to-br from-purple-600 via-purple-800 to-transparent rounded-full blur-[200px] opacity-75"
+  animate={{
+    x: [0, 20, 0],
+    y: [0, 15, 0],
+  }}
+  transition={{
+    duration: 5,
+    repeat: Infinity,
+    ease: "easeInOut"
+  }}
+/>
       <div className="max-w-7xl mx-auto space-y-10">
         {/* Main Footer Content */}
         <div className="flex flex-col lg:flex-row lg:justify-between gap-10">
