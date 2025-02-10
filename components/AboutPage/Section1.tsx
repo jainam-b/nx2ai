@@ -1,9 +1,8 @@
 import Image from "next/image";
-import { Target } from "lucide-react";
+import { Zap, Users } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Section1() {
-  // Animation variants
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
@@ -30,27 +29,23 @@ export default function Section1() {
         className="max-w-7xl mx-auto space-y-16"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }} // Adjust `amount` to control when the animation triggers
+        viewport={{ once: true, amount: 0.2 }}
         variants={staggerContainer}
       >
-        {/* Header Section */}
         <motion.div className="grid gap-8 md:grid-cols-2" variants={staggerContainer}>
           <motion.h1 className="text-5xl md:text-6xl font-medium leading-tight" variants={fadeInUp}>
-            About our company
+          Why Choose NX2AI?
           </motion.h1>
           <motion.p className="text-lg text-gray-300 leading-relaxed" variants={fadeInUp}>
-            We collaborate intimately with the globe&apos;s most avant-garde businesses to enhance their client service
-            divisions. Every individual amongst us as patrons, have our unique variant of that one communication with a
-            customer help desk.
+            At NX2AI, we make AI smarter, more accessible, and built to grow with you. Our solutions go beyond data processing—they think, learn, and evolve to keep your business ahead of the curve.
           </motion.p>
         </motion.div>
 
-        {/* Image Grid */}
         <motion.div className="grid md:grid-cols-2 gap-6" variants={staggerContainer}>
           <motion.div className="relative h-[400px] rounded-3xl overflow-hidden" variants={fadeIn}>
             <Image
               src="https://framerusercontent.com/images/avCKzJYajfquM8nuCTscgeaEw.png?scale-down-to=1024"
-              alt="Office meeting scene"
+              alt="AI Technology visualization"
               fill
               className="object-cover"
             />
@@ -58,47 +53,39 @@ export default function Section1() {
           <motion.div className="relative h-[400px] rounded-3xl overflow-hidden" variants={fadeIn}>
             <Image
               src="https://framerusercontent.com/images/xpx7XAPqal1XW3bSeawgBcWToA.jpg?scale-down-to=2048"
-              alt="Hands joining together"
+              alt="Business implementation"
               fill
               className="object-cover"
             />
           </motion.div>
         </motion.div>
 
-        {/* Content Grid */}
         <motion.div className="grid md:grid-cols-2 gap-16" variants={staggerContainer}>
-          {/* Left Column */}
           <motion.div className="space-y-6" variants={fadeInUp}>
-            <h2 className="text-4xl font-medium">Helping small businesses</h2>
+            <h2 className="text-4xl font-medium">Transform Your Business with AI</h2>
             <p className="text-gray-300 leading-relaxed">
-              Focus on customers first, believing that growing their business is the key to our own. Its a principle
-              ingrained in our approach — customers first, revenues second, always leading to a world with more
-              founders. On the other end of the line are well-meaning, talented people doing their best with what they
-              have a tangled web of tribal knowledge, spreadsheets, and outdated systems.
+              With so many AI solutions available, NX2AI stands out by focusing on real-world impact. We transform complex AI technology into accessible, practical tools that drive meaningful results for your business—from intelligent automation to predictive analytics.
             </p>
           </motion.div>
 
-          {/* Right Column */}
           <motion.div className="space-y-12" variants={staggerContainer}>
             <motion.div className="space-y-4" variants={fadeInUp}>
               <div className="flex items-center gap-2">
-                <Target className="w-6 h-6" />
-                <h3 className="text-2xl font-medium">Our mission</h3>
+                <Zap className="w-6 h-6" />
+                <h3 className="text-2xl font-medium">AI That Thinks Ahead</h3>
               </div>
               <p className="text-gray-300">
-                At the heart of our mission is breaking down development barriers. We provide seamless workflows, and
-                user-friendly interfaces.
+                Our next-gen AI solutions learn, adapt, and evolve with your business, ensuring you stay ahead of industry trends and competition.
               </p>
             </motion.div>
 
             <motion.div className="space-y-4" variants={fadeInUp}>
               <div className="flex items-center gap-2">
-                <Target className="w-6 h-6" />
-                <h3 className="text-2xl font-medium">Our mission</h3>
+                <Users className="w-6 h-6" />
+                <h3 className="text-2xl font-medium">Seamless Integration</h3>
               </div>
               <p className="text-gray-300">
-                At the heart of our mission is breaking down development barriers. We provide seamless workflows, and
-                user-friendly interfaces.
+                Skip the complicated setup. Our solutions integrate smoothly with your existing systems, delivering immediate value and measurable results.
               </p>
             </motion.div>
           </motion.div>

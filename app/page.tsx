@@ -18,7 +18,9 @@ export default function Home() {
     >
       <Dashboard />
       <About />
-      <Service />
+      <div className="mt-10">
+        <Service />
+      </div>
       <Testimonial />
       <div className="mt-24">
         <CTA />

@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export function About() {
   return (
-    <div className="bg-black py-24 px-6 md:px-8 lg:px-16">
+    <div className="bg-black md:py-12  px-6 md:px-8 lg:px-16">
       <motion.h2
         className="text-center text-4xl md:text-6xl lg:text-7xl font-medium mb-16 bg-gradient-to-b from-white to-white/80 bg-clip-text text-transparent font-inter"
         initial={{ opacity: 0, y: 20 }}
@@ -17,31 +17,34 @@ export function About() {
         About Us
       </motion.h2>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto w-full">
+      <motion.div 
+        className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto w-full"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         {/* Card 1: AI-Powered Solutions */}
         <WobbleCard containerClassName="col-span-1 group">
           <div className="relative h-[480px] overflow-hidden">
-            {/* Image Container */}
             <div className="absolute inset-0">
               <Image
-                src="/heroSection/a01.jpeg" 
+                src="https://res.cloudinary.com/diyfjjyzv/image/upload/v1738770871/Event/vqp2smexvvdqdqmygsae.jpg" 
                 alt="AI Brain"
                 width={500}
                 height={500}
                 className="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-700"
               />
-              {/* Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/90" />
             </div>
             
-            {/* Content */}
             <div className="relative h-full p-6 flex flex-col justify-end">
               <div className="transform group-hover:-translate-y-2 transition-transform duration-500">
                 <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white text-left mb-4 ">
                   AI-Powered Solutions
                 </h2>
                 <p className="text-base text-neutral-300/90 leading-relaxed">
-                  We are a team of passionate AI researchers and engineers dedicated to breaking down language barriers through innovative technology. Our mission is to make global communication seamless and natural.
+                  We are a team of passionate AI researchers and engineers dedicated to breaking down language barriers through innovative technology.
                 </p>
               </div>
             </div>
@@ -51,20 +54,17 @@ export function About() {
         {/* Card 2: Real-time Translation */}
         <WobbleCard containerClassName="col-span-1 lg:col-span-2 group">
           <div className="relative h-[480px] overflow-hidden">
-            {/* Image Container */}
             <div className="absolute inset-0">
               <Image
-                src="/heroSection/a02.png"
+                src="https://res.cloudinary.com/diyfjjyzv/image/upload/v1738770962/Event/euaw4brxvtwgvjb66f3b.jpg"
                 alt="Real-time Translation"
                 width={1000}
                 height={600}
                 className="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-700"
               />
-              {/* Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/90" />
             </div>
             
-            {/* Content */}
             <div className="relative h-full p-6 flex flex-col justify-end">
               <div className="transform group-hover:-translate-y-2 transition-transform duration-500">
                 <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white mb-4 ">
@@ -81,20 +81,17 @@ export function About() {
         {/* Card 3: Natural Voice */}
         <WobbleCard containerClassName="col-span-1 lg:col-span-2 group">
           <div className="relative h-[480px] overflow-hidden">
-            {/* Image Container */}
             <div className="absolute inset-0">
               <Image
-                src="/heroSection/a3.png"
+                src="https://res.cloudinary.com/diyfjjyzv/image/upload/v1738771025/Event/izi8tlpevd0z89ctd8wa.jpg"
                 alt="Natural Voice"
                 width={800}
                 height={400}
                 className="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-700"
               />
-              {/* Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/90" />
             </div>
             
-            {/* Content */}
             <div className="relative h-full p-6 flex flex-col justify-end">
               <div className="transform group-hover:-translate-y-2 transition-transform duration-500">
                 <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white mb-4 ">
@@ -111,20 +108,17 @@ export function About() {
         {/* Card 4: Multi-lingual */}
         <WobbleCard containerClassName="col-span-1 group">
           <div className="relative h-[480px] overflow-hidden">
-            {/* Image Container */}
             <div className="absolute inset-0">
               <Image
-                src="/heroSection/a02.png"
+                src="https://res.cloudinary.com/diyfjjyzv/image/upload/v1738771007/Event/vmcrbxelxjgznape09fs.jpg"
                 alt="Multi-lingual Support"
                 width={500}
                 height={500}
                 className="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-700"
               />
-              {/* Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/90" />
             </div>
             
-            {/* Content */}
             <div className="relative h-full p-6 flex flex-col justify-end">
               <div className="transform group-hover:-translate-y-2 transition-transform duration-500">
                 <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white text-left mb-4 ">
@@ -137,7 +131,7 @@ export function About() {
             </div>
           </div>
         </WobbleCard>
-      </div>
+      </motion.div>
     </div>
   );
 }

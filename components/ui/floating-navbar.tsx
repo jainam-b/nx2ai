@@ -37,12 +37,14 @@ export const FloatingNav = ({
 
   return (
     <motion.header
-      initial={{ y: -100 }}
+      initial={{ y: 0 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 300, damping: 30 }}
       className={cn(
         "fixed top-0 inset-x-0 w-full z-[5000] transition-all duration-300",
-        isScrolled || mobileMenuOpen ? "bg-black/60 backdrop-blur-lg shadow-lg" : "bg-transparent",
+        isScrolled || mobileMenuOpen 
+          ? "bg-black/60 backdrop-blur-lg shadow-lg" 
+          : "bg-transparent backdrop-blur-none",
         className,
       )}
     >
@@ -51,9 +53,15 @@ export const FloatingNav = ({
           {/* Logo */}
           <div className="flex">
             <Link href="/" className="text-white mt-2 text-xl font-bold">
-            <Image src="/logoNew.png" alt="logo" width={120} height={10} />
-          </Link>
-            </div>
+              <Image 
+                src="/logoNew.png" 
+                alt="logo" 
+                width={120} 
+                height={10} 
+                priority 
+              />
+            </Link>
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-1">
@@ -147,4 +155,3 @@ export const FloatingNav = ({
 }
 
 export default FloatingNav
-

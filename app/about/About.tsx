@@ -84,7 +84,7 @@ export default function About() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="text-base md:text-lg text-white/70 leading-relaxed mb-10"
             >
-              Hydar is a premium Framer template. This incredible template would transform your website in just a few clicks. We also provide custom Framer template to help you maximize your Framer skills and help you get the most out of your template.
+             At NX2AI, we’re not just building AI—we’re shaping the future of intelligence. Our goal is simple: to create smart, adaptive, and innovative AI solutions that make life easier, businesses more efficient, and industries more advanced.
             </motion.p>
 
             {/* Buttons */}

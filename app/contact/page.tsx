@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Footer from "@/components/Footer/Footer";
 import ContactForm from "@/components/ContactPage/ContactForm";
 import { NavBar } from "@/components/Navbar/Navbar";
+import ContactDetails from "@/components/ContactPage/ContactDetails";
 
 export default function page() {
   return (
@@ -14,6 +15,7 @@ export default function page() {
     >
       <div>
         <NavBar/>
+        <ContactDetails/>
         <ContactForm/>
         <Footer/>
       </div>

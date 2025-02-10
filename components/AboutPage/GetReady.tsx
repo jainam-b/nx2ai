@@ -54,6 +54,7 @@ export default function GetReady() {
 
           {/* Pulsating Gradient Button */}
           <motion.button
+          onClick={()=>window.location.href=("/contact")}
             className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
             animate={{
               scale: [1, 1.05, 1],

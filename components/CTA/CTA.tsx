@@ -1,16 +1,8 @@
 "use client"
-
-import { useState } from "react"
 import { motion } from "framer-motion"
 
 export default function CTA() {
-  const [email, setEmail] = useState("")
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission
-    console.log("Email submitted:", email)
-  }
 
   return (
     <div className="mt-18 bg-black flex items-center justify-center p-4">
@@ -48,31 +40,46 @@ export default function CTA() {
           transition={{ duration: 0.8 }}
           className="relative z-10 flex flex-col items-center justify-center px-4 py-20"
         >
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-medium text-center mb-12 text-white">
-          Next Generation Of 
+         <motion.h2
+            className="mb-4 text-4xl md:text-7xl font-medium text-white text-center"
+            animate={{
+              textShadow: [
+                "0 0 10px rgba(139, 92, 246, 0.5)",
+                "0 0 20px rgba(139, 92, 246, 0.8)",
+                "0 0 10px rgba(139, 92, 246, 0.5)",
+              ],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              repeatType: "mirror",
+            }}
+          >
+            Next Generation Of 
             <br />
             AI For Everyone.
-          </h1>
+          </motion.h2>
 
-          <form onSubmit={handleSubmit} className="w-full max-w-md space-y-4">
-            <div className="flex flex-col sm:flex-row gap-3">
-              <input
+          <form  className="w-full max-w-md space-y-4">
+            <div className="flex flex-col justify-center items-center sm:flex-row gap-3">
+              {/* <input
                 type="email"
                 placeholder="Your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="flex-1 px-4 py-3 rounded-lg bg-purple-950/50 border border-purple-500/20 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500/40 transition-colors"
                 required
-              />
+              /> */}
               <button
+              onClick={()=>window.location.href=("/contact")}
                 type="submit"
                 className="px-6 py-3 bg-white text-purple-950 rounded-lg font-medium hover:bg-gray-100 transition-colors"
               >
-                Sign up
+                Contact Us
               </button>
             </div>
 
-            <p className="text-gray-400 text-center text-sm">No credit card required • 7-days free trial</p>
+        
           </form>
         </motion.div>
 

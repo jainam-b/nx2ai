@@ -1,4 +1,5 @@
 import { LayoutDashboard, BarChart3, Sparkles, FileText, Target, Bell, Link2, Zap, Users } from "lucide-react"
+import { motion } from "framer-motion"
 
 export default function Service() {
   const features = [
@@ -62,26 +63,57 @@ export default function Service() {
       "description": "Advanced AI capabilities for generating content, summarizing information, and performing data analysis.",
       "icon": FileText
     },
-    // {
-    //   "title": "AI-Driven Content Moderation",
-    //   "description": "Advanced tools to detect and moderate harmful or inappropriate content in real-time.",
-    //   "icon": Target
-    // }
   ]
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5
+      }
+    }
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#190D2E] to-[#000000] text-white py-20 px-4 md:px-6 lg:px-8 rounded-3xl">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium mb-20">
+        <motion.h1 
+          className="text-5xl md:text-6xl lg:text-7xl font-medium mb-20"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
           Elevate your
           <br />
           SEO efforts.
-        </h1>
+        </motion.h1>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 ">
+        <motion.div 
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
           {features.map((feature, index) => (
-            <div key={index} className="space-y-3">
+            <motion.div 
+              key={index} 
+              className="space-y-3"
+              variants={itemVariants}
+            >
               <div className="flex items-center gap-2 hover:animate-in">
                 <feature.icon className="w-6 h-6" />
                 <h2 className="text-xl font-medium">
@@ -89,9 +121,9 @@ export default function Service() {
                 </h2>
               </div>
               <p className="text-gray-400 text-lg leading-relaxed">{feature.description}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   )
